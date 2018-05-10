@@ -3,6 +3,6 @@ steps:
     args: ["install", "github.com/wckobayashi/cloudbuilder-sample"]
     env: ["PROJECT_ROOT=github.com/wckobayashi/cloudbuilder-sample"]
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/spinnaker-sample/cloudbuilder-sample:$REVISION_ID", "-f", "Dockerfile", "."]
+    args: ["build", "-t", "gcr.io/$_PROJECT_ID/cloudbuilder-sample:$REVISION_ID", "-f", "Dockerfile", "."]
 images:
-  - "gcr.io/spinnaker-sample/cloudbuilder-sample:$REVISION_ID"
+  - "gcr.io/$_PROJECT_ID/cloudbuilder-sample:$REVISION_ID"
