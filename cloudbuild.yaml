@@ -1,8 +1,8 @@
 steps:
-  - name: "gcr.io/cloudbuilder-sample/go"
+  - name: "gcr.io/cloud-builders/go"
     args: ["install", "github.com/wckobayashi/cloudbuilder-sample"]
     env: ["PROJECT_ROOT=github.com/wckobayashi/cloudbuilder-sample"]
-  - name: "gcr.io/cloudbuilder-sample/docker"
+  - name: "gcr.io/cloud-builders/docker"
     args: ["build", "-t", "gcr.io/spinnaker-sample/cloudbuilder-sample:$REVISION_ID", "-f", "Dockerfile", "."]
 images:
   - "gcr.io/spinnaker-sample/cloudbuilder-sample:$REVISION_ID"
